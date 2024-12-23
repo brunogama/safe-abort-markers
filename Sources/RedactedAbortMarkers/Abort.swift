@@ -1,4 +1,7 @@
 import Foundation
+let foo: String? = "bar"
+
+print(foo!)
 
 public enum Abort: Sendable {
     public struct Reason: Sendable, CustomDebugStringConvertible, ExpressibleByStringLiteral {
