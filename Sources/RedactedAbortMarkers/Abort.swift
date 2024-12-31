@@ -94,11 +94,11 @@ public enum Assert {
     }
 }
 
-public extension Abort.Reason {
-    static let deadCode: Self = "Xcode requires this dead code"
-    static let mustBeOverridden: Self = "This method must be overriden"
-    static let unreachable: Self =
+extension Abort.Reason {
+    public static let deadCode: Self = "Xcode requires this dead code"
+    public static let mustBeOverridden: Self = "This method must be overriden"
+    public static let unreachable: Self =
         "Absurd condition: This code should be unreachable"
-    static let notYetImplemented: Self = "This code has not been"
-    static let invalidLogic: Self = "Invalid logic resulted in a failed"
+    public static let notYetImplemented: Self = "This code has not been"
+    public static let invalidLogic: Self = "Invalid logic resulted in a failed"
 }

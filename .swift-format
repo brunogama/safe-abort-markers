@@ -19,8 +19,8 @@
       "XCTAssertNoThrow"
     ]
   },
-  "prioritizeKeepingFunctionOutputTogether" : true,
-  "respectsExistingLineBreaks" : false,
+  "prioritizeKeepingFunctionOutputTogether" : false,
+  "respectsExistingLineBreaks" : true,
   "rules" : {
     "AllPublicDeclarationsHaveDocumentation" : false,
     "AlwaysUseLiteralForEmptyCollectionInit" : false,
@@ -41,7 +41,7 @@
     "NoBlockComments" : true,
     "NoCasesWithOnlyFallthrough" : true,
     "NoEmptyTrailingClosureParentheses" : true,
-    "NoLabelsInCasePatterns" : true,
+    "NoLabelsInCasePatterns" : false,
     "NoLeadingUnderscores" : false,
     "NoParensAroundConditions" : true,
     "NoPlaygroundLiterals" : true,
@@ -54,11 +54,11 @@
     "ReplaceForEachWithForLoop" : true,
     "ReturnVoidInsteadOfEmptyTuple" : true,
     "TypeNamesShouldBeCapitalized" : true,
-    "UseEarlyExits" : false,
+    "UseEarlyExits" : true,
     "UseExplicitNilCheckInConditions" : true,
     "UseLetInEveryBoundCaseVariable" : true,
     "UseShorthandTypeNames" : false,
-    "UseSingleLinePropertyGetter" : false,
+    "UseSingleLinePropertyGetter" : true,
     "UseSynthesizedInitializer" : true,
     "UseTripleSlashForDocumentationComments" : true,
     "UseWhereClausesInForLoops" : false,

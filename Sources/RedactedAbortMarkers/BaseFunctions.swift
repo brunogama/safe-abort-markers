@@ -12,11 +12,15 @@ private let outputQueue: DispatchQueue = {
 }()
 
 private func setupAtExitHandler() {
-    atexit { outputQueue.sync(flags: .barrier) {} }
+    atexit {
+        outputQueue.sync(flags: .barrier) {}
+    }
 }
 
 public func queuedPrint<T: Sendable>(_ object: T) {
-    outputQueue.async { print(object) }
+    outputQueue.async {
+        print(object)
+    }
 }
 
 public func queuedPrintError(_ string: String) {
@@ -44,23 +48,53 @@ public func queuedFatalError(
     _ reason: Abort.Reason,
     file: StaticString = #file,
     line: UInt = #line
-) -> Never { queuedFatalError(reason.debugDescription, file: file, line: line) }
-
-public func absurd(file: StaticString = #file, line: UInt = #line) -> Never {
-    queuedFatalError(Abort.Reason.invalidLogic, file: file, line: line)
+) -> Never {
+    queuedFatalError(
+        reason.debugDescription,
+        file: file,
+        line: line
+    )
 }
 
-public func placeholder(file: StaticString = #file, line: UInt = #line) -> Never
-{ queuedFatalError(Abort.Reason.notYetImplemented, file: file, line: line) }
+public func absurd(file: StaticString = #file, line: UInt = #line) -> Never {
+    queuedFatalError(
+        Abort.Reason.invalidLogic,
+        file: file,
+        line: line
+    )
+}
+
+public func placeholder(
+    file: StaticString = #file,
+    line: UInt = #line
+) -> Never {
+    queuedFatalError(
+        Abort.Reason.notYetImplemented,
+        file: file,
+        line: line
+    )
+}
 
 public func abort(
     _ why: String,
     file: StaticString = #file,
     line: UInt = #line
-) -> Never { queuedFatalError(why, file: file, line: line) }
+) -> Never {
+    queuedFatalError(
+        why,
+        file: file,
+        line: line
+    )
+}
 
 public func abort(
     _ reason: Abort.Reason,
     file: StaticString = #file,
     line: UInt = #line
-) -> Never { queuedFatalError(reason.debugDescription, file: file, line: line) }
+) -> Never {
+    queuedFatalError(
+        reason.debugDescription,
+        file: file,
+        line: line
+    )
+}
