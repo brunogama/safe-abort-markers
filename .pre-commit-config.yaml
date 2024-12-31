@@ -9,25 +9,14 @@ repos:
     -   id: end-of-file-fixer
         description: Ensures that a file is either empty, or ends with one newline.
     -   id: trailing-whitespace
-    # -   id: no-commit-to-branch
-    #     name: no commits to main
-    #     description: Ensures commit is not on main, we want to use feature branches.
-    #     args: [--branch, main]
-# -   repo: https://github.com/nicklockwood/SwiftFormat
-#     rev: 0.55.4
-#     hooks:
-#     -   id: swiftformat
-#         name: swiftformat
-#         description: "Auto-format Swift files"
-#         args: [--config, .swiftformat]
--  repo: local
-   hooks:
-   - id: swift-format
-     name: swift-format
-     description: "Auto-format Swift files"
-     entry: swift-format format -i --configuration .swift-format
-     language: system
-     types: [swift]
+-   repo: local
+    hooks:
+    -   id: swift-format
+        name: swift-format
+        description: "Auto-format Swift files"
+        entry: swift-format format -i --configuration .swift-format
+        language: system
+        types: [swift]
 -   repo: https://github.com/realm/SwiftLint
     rev: 0.57.1
     hooks:

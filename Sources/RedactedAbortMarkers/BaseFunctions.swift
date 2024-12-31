@@ -32,69 +32,54 @@ public func queuedPrintError(_ string: String) {
 
 public func queuedFatalError(
     _ string: String,
-    file: StaticString = #file,
-    line: UInt = #line
+    sourceLocation: SourceLocation = SourceLocation()
 ) -> Never {
     outputQueue.sync {
         fflush(stdout)
-        let file = "\(file)".bridge().lastPathComponent
-        fputs("\(string): file \(file), line \(line)\n", stderr)
+        let file = "\(sourceLocation.file)".bridge().lastPathComponent
+        fputs(
+            "\(string): file \(sourceLocation.file), line \(sourceLocation.line)\n",
+            stderr
+        )
     }
 
     abort()
 }
 
 public func queuedFatalError(
-    _ reason: Abort.Reason,
-    file: StaticString = #file,
-    line: UInt = #line
+    reason: Abort.Reason,
+    sourceLocation: SourceLocation = SourceLocation()
 ) -> Never {
     queuedFatalError(
         reason.debugDescription,
-        file: file,
-        line: line
+        sourceLocation: sourceLocation
     )
 }
 
-public func absurd(file: StaticString = #file, line: UInt = #line) -> Never {
-    queuedFatalError(
-        Abort.Reason.invalidLogic,
-        file: file,
-        line: line
-    )
-}
-
-public func placeholder(
-    file: StaticString = #file,
-    line: UInt = #line
+public func absurd(
+    sourceLocation: SourceLocation = SourceLocation()
 ) -> Never {
     queuedFatalError(
-        Abort.Reason.notYetImplemented,
-        file: file,
-        line: line
+        reason: .unreachable,
+        sourceLocation: sourceLocation
+    )
+}
+
+public func notImplemented(
+    sourceLocation: SourceLocation = SourceLocation()
+) -> Never {
+    queuedFatalError(
+        reason: .notYetImplemented,
+        sourceLocation: sourceLocation
     )
 }
 
 public func abort(
-    _ why: String,
-    file: StaticString = #file,
-    line: UInt = #line
-) -> Never {
-    queuedFatalError(
-        why,
-        file: file,
-        line: line
-    )
-}
-
-public func abort(
-    _ reason: Abort.Reason,
-    file: StaticString = #file,
-    line: UInt = #line
+    reason: Abort.Reason,
+    sourceLocation: SourceLocation = SourceLocation()
 ) -> Never {
     queuedFatalError(
         reason.debugDescription,
-        file: file,
-        line: line
+        sourceLocation: sourceLocation
     )
 }
