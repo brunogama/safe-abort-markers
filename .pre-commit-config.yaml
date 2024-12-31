@@ -1,0 +1,35 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+        description: Ensure parseable yaml/yml files
+    -   id: check-json
+        description: Ensure only valid json is commited
+    -   id: end-of-file-fixer
+        description: Ensures that a file is either empty, or ends with one newline.
+    -   id: trailing-whitespace
+    # -   id: no-commit-to-branch
+    #     name: no commits to main
+    #     description: Ensures commit is not on main, we want to use feature branches.
+    #     args: [--branch, main]
+-   repo: https://github.com/nicklockwood/SwiftFormat
+    rev: 0.55.4
+    hooks:
+    -   id: swiftformat
+        name: swiftformat
+        description: "Auto-format Swift files"
+        args: [--config, .swiftformat]
+-   repo: https://github.com/realm/SwiftLint
+    rev: 0.57.1
+    hooks:
+    -   id: swiftlint
+        name: swiftlint
+        description: "Lint Swift files"
+        args: [--config, .swiftlint.yml]
+-   repo: https://github.com/qoomon/git-conventional-commits
+    rev: V2.6.7
+    hooks:
+    -   id: conventional-commits
+        name: conventional-commits
+        description: "Check commit messages for conventional commit format"

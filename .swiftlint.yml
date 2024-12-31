@@ -1,691 +1,727 @@
-included:
-  - Plugins
-  - Source
-  - Tests
-  - Package.swift
-excluded:
-  - Tests/SwiftLintFrameworkTests/Resources
-
-opt_in_rules:
-  - accessibility_label_for_image
-  - accessibility_trait_for_button
-  - anonymous_argument_in_multiline_closure
-  - array_init
-  - attributes
-  - balanced_xctest_lifecycle
-  - capture_variable
-  - closure_body_length
-  - closure_end_indentation
-  - closure_spacing
-  - collection_alignment
-  - comma_inheritance
-  - conditional_returns_on_newline
-  - contains_over_filter_count
-  - contains_over_filter_is_empty
-  - contains_over_first_not_nil
-  - contains_over_range_nil_comparison
-  - contrasted_opening_brace
-  - convenience_type
-  - direct_return
-  - discarded_notification_center_observer
-  - discouraged_assert
-  - discouraged_none_name
-  - discouraged_object_literal
-  - discouraged_optional_boolean
-  - discouraged_optional_collection
-  - empty_collection_literal
-  - empty_count
-  - empty_string
-  - empty_xctest_method
-  - enum_case_associated_values_count
-  - expiring_todo
-  - explicit_acl
-  - explicit_enum_raw_value
-  - explicit_init
-  - explicit_self
-  - explicit_top_level_acl
-  - explicit_type_interface
-  - extension_access_modifier
-  - fallthrough
-  - fatal_error_message
-  - file_header
-  - file_name
-  - file_name_no_space
-  - file_types_order
-  - final_test_case
-  - first_where
-  - flatmap_over_map_reduce
-  - force_unwrapping
-  - function_default_parameter_at_end
-  - ibinspectable_in_extension
-  - identical_operands
-  - implicit_return
-  - implicitly_unwrapped_optional
-  - indentation_width
-  - inert_defer
-  - joined_default_parameter
-  - last_where
-  - legacy_multiple
-  - legacy_objc_type
-  - let_var_whitespace
-  - literal_expression_end_indentation
-  - local_doc_comment
-  - lower_acl_than_parent
-  - missing_docs
-  - modifier_order
-  - multiline_arguments
-  - multiline_arguments_brackets
-  - multiline_function_chains
-  - multiline_literal_brackets
-  - multiline_parameters
-  - multiline_parameters_brackets
-  - nimble_operator
-  - no_empty_block
-  - no_extension_access_modifier
-  - no_grouping_extension
-  - no_magic_numbers
-  - non_overridable_class_declaration
-  - nslocalizedstring_key
-  - nslocalizedstring_require_bundle
-  - number_separator
-  - object_literal
-  - one_declaration_per_file
-  - operator_usage_whitespace
-  - optional_enum_case_matching
-  - overridden_super_call
-  - override_in_extension
-  - pattern_matching_keywords
-  - period_spacing
-  - prefer_key_path
-  - prefer_nimble
-  - prefer_self_in_static_references
-  - prefer_self_type_over_type_of_self
-  - prefer_zero_over_explicit_init
-  - prefixed_toplevel_constant
-  - private_action
-  - private_outlet
-  - private_subject
-  - private_swiftui_state
-  - prohibited_interface_builder
-  - prohibited_super_call
-  - quick_discouraged_call
-  - quick_discouraged_focused_test
-  - quick_discouraged_pending_test
-  - raw_value_for_camel_cased_codable_enum
-  - reduce_into
-  - redundant_nil_coalescing
-  - redundant_self_in_closure
-  - redundant_type_annotation
-  - required_deinit
-  - required_enum_case
-  - return_value_from_void_function
-  - self_binding
-  - shorthand_argument
-  - shorthand_optional_binding
-  - single_test_class
-  - sorted_enum_cases
-  - sorted_first_last
-  - sorted_imports
-  - static_operator
-  - strict_fileprivate
-  - strong_iboutlet
-  - superfluous_else
-  - switch_case_on_newline
-  - test_case_accessibility
-  - toggle_bool
-  - trailing_closure
-  - type_contents_order
-  - typesafe_array_init
-  - unavailable_function
-  - unhandled_throwing_task
-  - unneeded_parentheses_in_closure_argument
-  - unowned_variable_capture
-  - untyped_error_in_catch
-  - unused_capture_list
-  - unused_declaration
-  - unused_import
-  - unused_parameter
-  - vertical_parameter_alignment_on_call
-  - vertical_whitespace_between_cases
-  - vertical_whitespace_closing_braces
-  - vertical_whitespace_opening_braces
-  - weak_delegate
-  - xct_specific_matcher
-  - yoda_condition
-  - attribute_name_spacing
-  - blanket_disable_command
-  - block_based_kvo
-  - class_delegate_protocol
-  - closing_brace
-  - closure_parameter_position
-  - colon
-  - comma
-  - comment_spacing
-  - compiler_protocol_init
-  - computed_accessors_order
-  - control_statement
-  - custom_rules
-  - cyclomatic_complexity
-  - deployment_target
-  - discouraged_direct_init
-  - duplicate_conditions
-  - duplicate_enum_cases
-  - duplicate_imports
-  - duplicated_key_in_dictionary_literal
-  - dynamic_inline
-  - empty_enum_arguments
-  - empty_parameters
-  - empty_parentheses_with_trailing_closure
-  - file_length
-  - for_where
-  - force_cast
-  - force_try
-  - function_body_length
+disabled_rules: # rule identifiers to exclude from running
   - function_parameter_count
-  - generic_type_name
-  - identifier_name
-  - implicit_getter
-  - inclusive_language
-  - invalid_swiftlint_command
-  - is_disjoint
-  - large_tuple
-  - leading_whitespace
-  - legacy_cggeometry_functions
-  - legacy_constant
-  - legacy_constructor
-  - legacy_hashing
-  - legacy_nsgeometry_functions
-  - legacy_random
   - line_length
-  - mark
-  - multiple_closures_with_trailing_closure
+  - variable_name
+  - cyclomatic_complexity
   - nesting
-  - no_fallthrough_only
-  - no_space_in_method_call
-  - non_optional_string_data_conversion
-  - notification_center_detachment
-  - ns_number_init_as_function_reference
-  - nsobject_prefer_isequal
-  - opening_brace
-  - operator_whitespace
-  - optional_data_string_conversion
-  - orphaned_doc_comment
-  - prefer_type_checking
-  - private_over_fileprivate
-  - protocol_property_accessors_order
-  - reduce_boolean
-  - redundant_discardable_let
-  - redundant_objc_attribute
-  - redundant_optional_initialization
-  - redundant_set_access_control
-  - redundant_string_enum_value
-  - redundant_void_return
-  - return_arrow_whitespace
-  - unused_enumerated
-  - vertical_parameter_alignment
-  - unneeded_override
-  - type_body_length
-  - control_statement
-  - colon
-  - comma
-  - contains_over_filter
-  - contains_over_first
-  - contains_over_last
-  - contains_over_map
-  - contains_over_reduce
-  - contains_over_sorted
-  - contains_over_split
-  - contains_over_suffix
-  - contains_over_prefix
-  - contains_over_drop
-  - contains_over_drop_while
-  - contains_over_prefix_while
-  - contains_over_suffix_while
-  - contains_over_flat_map
-  - contains_over_compact_map
-  - contains_over_map_values
-  - contains_over_filter_values
-  - contains_over_reduce_values
-  - contains_over_sorted_values
-  - contains_over_split_values
-  - contains_over_suffix_values
-  - contains_over_prefix_values
-  - contains_over_drop_values
-  - contains_over_drop_while_values
-  - contains_over_prefix_while_values
-  - contains_over_suffix_while_values
-  - contains_over_flat_map_values
-  - contains_over_compact_map_values
-  attributes:
-    always_on_same_line: true
-    always_in_same_line: true
+  - conditional_binding_cascade
+  - large_tuple
 
-  closure_body_length:
-    warning: 20
-    error: 40
+opt_in_rules: # some rules are only opt-in
+  - force_unwrapping
+  - force_https
+  - empty_count
+  - conditional_binding_cascade
 
-  closure_end_indentation:
-    indent_width: 4
+included:
+  - Sourcery
+  - SourceryRuntime
+  - SourceryTests
+  - Templates/Tests
 
-  closure_spacing:
-    lines: 1
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - Packages
+  - SourceryTests/Stub
+  - Templates/Tests/Generated
+  - Templates/Tests/Expected
 
-  comma:
-    mandatory_comma: true
+type_body_length:
+  - 700 #warning
+  - 1000 #error
 
-  cyclomatic_complexity:
-    ignores_case_statements: true
-    ignores_comments: true
-    warning: 10
-    error: 20
+file_length:
+  - 1000 #warning
+  - 1200 #error
 
-  file_length:
-    warning: 400
-    error: 1000
-    ignore_comment_only_lines: true
+function_body_length:
+  - 125 #warning
+  - 200 #error
 
-  function_body_length:
-    warning: 40
-    error: 80
-    ignore_comments: true
-    ignore_closures: true
-    igmore_top_level_declarations: true
-
-  function_parameter_count:
-    warning: 5
-    error: 8
-
-  identifier_name:
-    min_length:
-      warning: 3
-      error: 2
-    max_length:
-      warning: 40
-      error: 60
-    excluded:
-      - id
-      - URL
-      
-  line_length:
-    warning: 120
-    error: 200
-    ignores_comments: true
-    ignores_interpolated_strings: true
-    ignores_urls: true
-
-  nesting:
-    type_level:
-      warning: 2
-      error: 3
-    statement_level:
-      warning: 5
-      error: 7
-
-  type_body_length:
-    warning: 200
-    error: 350
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 50
+    error: 50
 
 custom_rules:
-  fatal_error:
-    name: Fatal Error
-    excluded: "Tests/*"
-    message: Prefer using `queuedFatalError` over `fatalError` to avoid leaking compiler host machine paths.
-    regex: \bfatalError\b
-    match_kinds:
-      - identifier
-    severity: error
-
-  mvvm_binding_pattern:
-    name: "MVVM Binding Pattern"
-    regex: '(?:class|struct)\s+\w+ViewModel\s*{[^}]*(?<!\$)\w+\s*:\s*Observable<[^>]+>[^}]*}'
-    message: "ViewModel properties that represent UI state should use Observable wrapper"
-    severity: error
-    
-  dependency_injection_constructor:
-    name: "Dependency Injection Constructor"
-    regex: '(?:class|struct)\s+(\w+)(?:(?!init).)*\binit\s*\([^)]*\)\s*\{(?![^}]*\b\1Dependencies\b)'
-    message: "Types should inject dependencies through a dedicated Dependencies type"
-    severity: warning
-    
-  command_pattern_validation:
-    name: "Command Pattern Validation"
-    regex: 'class\s+\w+Command\s*:.*?{(?![^}]*(?:execute|perform|run)\s*\([^)]*\))'
-    message: "Command objects must implement execute(), perform() or run() method"
-    severity: error
-    
-  coordinator_flow_handling:
-    name: "Coordinator Flow Handling"
-    regex: 'class\s+\w+Coordinator\s*:.*?{(?![^}]*(?:start|handle|coordinate)\s*\([^)]*\))'
-    message: "Coordinator classes must implement start(), handle() or coordinate() method"
-    severity: error
-
-  reactive_disposable_pattern:
-    name: "Reactive Disposable Pattern"
-    regex: '(?:class|struct)\s+\w+(?:ViewModel|Controller)\s*{[^}]*(?<!\bdeinit\s*{[^}]*?)DisposeBag[^}]*}'
-    message: "Classes using DisposeBag should properly dispose in deinit"
-    severity: error
-
-  use_case_implementation:
-    name: "Use Case Implementation"
-    regex: 'protocol\s+\w+UseCase\s*{(?![^}]*(?:execute|perform)\s*\([^)]*\)\s*(?:throws\s+)?async)'
-    message: "Use cases should have an async execute() or perform() method"
-    severity: error
-
-  repository_async_pattern:
-    name: "Repository Async Pattern"
-    regex: 'protocol\s+\w+Repository\s*{[^}]*func\s+\w+\s*\([^)]*\)\s*(?!async)(?!throws)[^}]*}'
-    message: "Repository methods should be async and/or throwing"
+  force_https:
+    name: "Force HTTPS over HTTP"
+    regex: "((?i)http(?!s))"
+    match_kinds: string
+    message: "HTTPS should be favored over HTTP"
     severity: warning
 
-  state_machine_validation:
-    name: "State Machine Validation"
-    regex: 'enum\s+\w+State\s*{[^}]*(?<!\bcase\s+[^:]+:\s*(?:Equatable|Hashable|CaseIterable))[^}]*}'
-    message: "State enums should conform to Equatable, Hashable, or CaseIterable"
+  explicit_failure_calls:
+    name: "Avoid asserting 'false'"
+    regex: '((assert|precondition)\(false)'
+    message: "Use assertionFailure() or preconditionFailure() instead."
     severity: warning
 
-  service_layer_isolation:
-    name: "Service Layer Isolation"
-    regex: 'class\s+\w+Service\s*{[^}]*(?:\bUIKit\b|\bSwiftUI\b)[^}]*}'
-    message: "Service layer should not import UI frameworks"
-    severity: error
+# disabled_rules:
+#   - function_parameter_count
+#   - line_length
+#   - variable_name
+#   - cyclomatic_complexity
+#   - nesting
+#   - conditional_binding_cascade
+#   - large_tuple
 
-  mapper_bidirectional_check:
-    name: "Mapper Bidirectional Check"
-    regex: 'struct\s+\w+Mapper\s*{(?![^}]*toDomain[^}]*toDTO)'
-    message: "Mappers should implement both toDomain and toDTO methods"
-    severity: warning
+# included:
+#   - Plugins
+#   - Source
+#   - Tests
+#   - Package.swift
 
-  result_builder_pattern:
-    name: "Result Builder Pattern"
-    regex: '@resultBuilder\s+struct\s+\w+Builder\s*{(?![^}]*buildBlock[^}]*buildEither)'
-    message: "Result builders should implement both buildBlock and buildEither methods"
-    severity: error
+# excluded:
+#   - Carthage
+#   - Pods
+#   - Packages
+#   - SourceryTests/Stub
+#   - Templates/Tests/Generated
+#   - Templates/Tests/Expected
+#   - .swiftpm
 
-  event_handler_type_safety:
-    name: "Event Handler Type Safety"
-    regex: 'typealias\s+\w+Handler\s*=\s*(?!.*->.*Result<.*,.*Error.*>)'
-    message: "Event handlers should return Result type for proper error handling"
-    severity: warning
+# opt_in_rules:
+#   - accessibility_label_for_image
+#   - accessibility_trait_for_button
+#   - anonymous_argument_in_multiline_closure
+#   - array_init
+#   - attributes
+#   - balanced_xctest_lifecycle
+#   - capture_variable
+#   - closure_body_length
+#   - closure_end_indentation
+#   - closure_spacing
+#   - collection_alignment
+#   - comma_inheritance
+#   - conditional_returns_on_newline
+#   - contains_over_filter_count
+#   - contains_over_filter_is_empty
+#   - contains_over_first_not_nil
+#   - contains_over_range_nil_comparison
+#   - contrasted_opening_brace
+#   - convenience_type
+#   - direct_return
+#   - discarded_notification_center_observer
+#   - discouraged_assert
+#   - discouraged_none_name
+#   - discouraged_object_literal
+#   - discouraged_optional_boolean
+#   - discouraged_optional_collection
+#   - empty_collection_literal
+#   - empty_count
+#   - empty_string
+#   - empty_xctest_method
+#   - enum_case_associated_values_count
+#   - expiring_todo
+#   - explicit_acl
+#   - explicit_enum_raw_value
+#   - explicit_init
+#   - explicit_self
+#   - explicit_top_level_acl
+#   - explicit_type_interface
+#   - extension_access_modifier
+#   - fallthrough
+#   - fatal_error_message
+#   - file_header
+#   - file_name
+#   - file_name_no_space
+#   - file_types_order
+#   - final_test_case
+#   - first_where
+#   - flatmap_over_map_reduce
+#   - force_unwrapping
+#   - function_default_parameter_at_end
+#   - ibinspectable_in_extension
+#   - identical_operands
+#   - implicit_return
+#   - implicitly_unwrapped_optional
+#   - indentation_width
+#   - inert_defer
+#   - joined_default_parameter
+#   - last_where
+#   - legacy_multiple
+#   - legacy_objc_type
+#   - let_var_whitespace
+#   - literal_expression_end_indentation
+#   - local_doc_comment
+#   - lower_acl_than_parent
+#   - missing_docs
+#   - modifier_order
+#   - multiline_arguments
+#   - multiline_arguments_brackets
+#   - multiline_function_chains
+#   - multiline_literal_brackets
+#   - multiline_parameters
+#   - multiline_parameters_brackets
+#   - nimble_operator
+#   - no_empty_block
+#   - no_extension_access_modifier
+#   - no_grouping_extension
+#   - no_magic_numbers
+#   - non_overridable_class_declaration
+#   - nslocalizedstring_key
+#   - nslocalizedstring_require_bundle
+#   - number_separator
+#   - object_literal
+#   - one_declaration_per_file
+#   - operator_usage_whitespace
+#   - optional_enum_case_matching
+#   - overridden_super_call
+#   - override_in_extension
+#   - pattern_matching_keywords
+#   - period_spacing
+#   - prefer_key_path
+#   - prefer_nimble
+#   - prefer_self_in_static_references
+#   - prefer_self_type_over_type_of_self
+#   - prefer_zero_over_explicit_init
+#   - prefixed_toplevel_constant
+#   - private_action
+#   - private_outlet
+#   - private_subject
+#   - private_swiftui_state
+#   - prohibited_interface_builder
+#   - prohibited_super_call
+#   - quick_discouraged_call
+#   - quick_discouraged_focused_test
+#   - quick_discouraged_pending_test
+#   - raw_value_for_camel_cased_codable_enum
+#   - reduce_into
+#   - redundant_nil_coalescing
+#   - redundant_self_in_closure
+#   - redundant_type_annotation
+#   - required_deinit
+#   - required_enum_case
+#   - return_value_from_void_function
+#   - self_binding
+#   - shorthand_argument
+#   - shorthand_optional_binding
+#   - single_test_class
+#   - sorted_enum_cases
+#   - sorted_first_last
+#   - sorted_imports
+#   - static_operator
+#   - strict_fileprivate
+#   - strong_iboutlet
+#   - superfluous_else
+#   - switch_case_on_newline
+#   - test_case_accessibility
+#   - toggle_bool
+#   - trailing_closure
+#   - type_contents_order
+#   - typesafe_array_init
+#   - unavailable_function
+#   - unhandled_throwing_task
+#   - unneeded_parentheses_in_closure_argument
+#   - unowned_variable_capture
+#   - untyped_error_in_catch
+#   - unused_capture_list
+#   - unused_declaration
+#   - unused_import
+#   - unused_parameter
+#   - vertical_parameter_alignment_on_call
+#   - vertical_whitespace_between_cases
+#   - vertical_whitespace_closing_braces
+#   - vertical_whitespace_opening_braces
+#   - weak_delegate
+#   - xct_specific_matcher
+#   - yoda_condition
+#   - attribute_name_spacing
+#   - blanket_disable_command
+#   - block_based_kvo
+#   - class_delegate_protocol
+#   - closing_brace
+#   - closure_parameter_position
+#   - colon
+#   - comma
+#   - comment_spacing
+#   - compiler_protocol_init
+#   - computed_accessors_order
+#   - control_statement
+#   - custom_rules
+#   - cyclomatic_complexity
+#   - deployment_target
+#   - discouraged_direct_init
+#   - duplicate_conditions
+#   - duplicate_enum_cases
+#   - duplicate_imports
+#   - duplicated_key_in_dictionary_literal
+#   - dynamic_inline
+#   - empty_enum_arguments
+#   - empty_parameters
+#   - empty_parentheses_with_trailing_closure
+#   - file_length
+#   - for_where
+#   - force_cast
+#   - force_try
+#   - function_body_length
+#   - function_parameter_count
+#   - generic_type_name
+#   - identifier_name
+#   - implicit_getter
+#   - inclusive_language
+#   - invalid_swiftlint_command
+#   - is_disjoint
+#   - large_tuple
+#   - leading_whitespace
+#   - legacy_cggeometry_functions
+#   - legacy_constant
+#   - legacy_constructor
+#   - legacy_hashing
+#   - legacy_nsgeometry_functions
+#   - legacy_random
+#   - line_length
+#   - mark
+#   - multiple_closures_with_trailing_closure
+#   - nesting
+#   - no_fallthrough_only
+#   - no_space_in_method_call
+#   - non_optional_string_data_conversion
+#   - notification_center_detachment
+#   - ns_number_init_as_function_reference
+#   - nsobject_prefer_isequal
+#   - opening_brace
+#   - operator_whitespace
+#   - optional_data_string_conversion
+#   - orphaned_doc_comment
+#   - prefer_type_checking
+#   - private_over_fileprivate
+#   - protocol_property_accessors_order
+#   - reduce_boolean
+#   - redundant_discardable_let
+#   - redundant_objc_attribute
+#   - redundant_optional_initialization
+#   - redundant_set_access_control
+#   - redundant_string_enum_value
+#   - redundant_void_return
+#   - return_arrow_whitespace
+#   - unused_enumerated
+#   - vertical_parameter_alignment
+#   - unneeded_override
+#   - type_body_length
+#   - control_statement
+#   - colon
+#   - comma
+#   - contains_over_filter
+#   - contains_over_first
+#   - contains_over_last
+#   - contains_over_map
+#   - contains_over_reduce
+#   - contains_over_sorted
+#   - contains_over_split
+#   - contains_over_suffix
+#   - contains_over_prefix
+#   - contains_over_drop
+#   - contains_over_drop_while
+#   - contains_over_prefix_while
+#   - contains_over_suffix_while
+#   - contains_over_flat_map
+#   - contains_over_compact_map
+#   - contains_over_map_values
+#   - contains_over_filter_values
+#   - contains_over_reduce_values
+#   - contains_over_sorted_values
+#   - contains_over_split_values
+#   - contains_over_suffix_values
+#   - contains_over_prefix_values
+#   - contains_over_drop_values
+#   - contains_over_drop_while_values
+#   - contains_over_prefix_while_values
+#   - contains_over_suffix_while_values
+#   - contains_over_flat_map_values
+#   - contains_over_compact_map_values
+#   attributes:
+#     always_on_same_line: true
+#     always_in_same_line: true
 
-  actor_isolation_check:
-    name: "Actor Isolation Check"
-    regex: 'actor\s+\w+\s*{[^}]*(?<!\bnonisolated\b)\s*func\s+\w+\s*\([^)]*\)\s*->\s*[^{]*\{'
-    message: "Consider marking appropriate actor methods as nonisolated"
-    severity: warning
+#   closure_body_length:
+#     warning: 20
+#     error: 40
 
-  protocol_composition_check:
-    name: "Protocol Composition Check"
-    regex: 'protocol\s+\w+\s*:\s*(?![^{]*&)'
-    message: "Consider using protocol composition for better interface segregation"
-    severity: warning
+#   closure_end_indentation:
+#     indent_width: 4
 
-  custom_operator_documentation:
-    name: "Custom Operator Documentation"
-    regex: '(?<!\/\/\/[^\n]*\n\s*)(?<!\/\*(?:[^*]|\*(?!\/))*\*\/\s*)operator\s+[^a-zA-Z0-9\s]+'
-    message: "Custom operators must be documented"
-    severity: error
+#   closure_spacing:
+#     lines: 1
 
-  generic_constraint_naming:
-    name: "Generic Constraint Naming"
-    regex: 'func\s+\w+<(?!T\s*:)[A-Z]\w*\s*:'
-    message: "Use T as the primary generic parameter name"
-    severity: warning
+#   file_length:
+#     warning: 400
+#     error: 1000
+#     ignore_comment_only_lines: true
 
-  property_wrapper_validation:
-    name: "Property Wrapper Validation"
-    regex: '@propertyWrapper\s+struct\s+\w+\s*{(?![^}]*wrappedValue[^}]*projectedValue)'
-    message: "Property wrappers should implement both wrappedValue and projectedValue"
-    severity: error
+#   function_body_length:
+#     warning: 40
+#     error: 80
+#     ignore_comments: true
+#     ignore_closures: true
+#     igmore_top_level_declarations: true
 
-  middleware_chain_pattern:
-    name: "Middleware Chain Pattern"
-    regex: 'protocol\s+\w+Middleware\s*{(?![^}]*\bnext\b[^}]*handle)'
-    message: "Middleware should have next reference and handle method"
-    severity: warning
+#   function_parameter_count:
+#     warning: 5
+#     error: 8
 
-  macro_implementation_check:
-    name: "Macro Implementation Check"
-    regex: '@freestanding\(expression\)\s+macro\s+\w+\s*{(?![^}]*\bexpand\b)'
-    message: "Expression macros must implement expand method"
-    severity: error
+#   identifier_name:
+#     min_length:
+#       warning: 3
+#       error: 2
+#     max_length:
+#       warning: 40
+#       error: 60
+#     excluded:
+#       - id
+#       - URL
 
-  access_control_hierarchy:
-    name: "Access Control Hierarchy"
-    regex: '(?:internal|fileprivate|private)\s+protocol\s+\w+\s*{[^}]*public\s+'
-    message: "Protocol members cannot be more accessible than the protocol itself"
-    severity: error
-  object_calisthenics:
-    name: "Object Calisthenics Rules"
-    included: ".*\\.swift"
-    excluded: ".*Test\\.swift"
-    rules:
-      # Rule 1: Only One Level of Indentation per Method
-      excessive_indentation:
-        regex: '(?x)
-          (?:func\s+\w+\s*\([^)]*\)\s*(?:throws\s+)?(?:async\s+)?(?:->)?[^{]*\{
-            (?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*
-            \s{8,}[^\s]
-          )'
-        message: "Methods should have only one level of indentation"
-        severity: error
+#   line_length:
+#     warning: 120
+#     error: 200
+#     ignores_comments: true
+#     ignores_interpolated_strings: true
+#     ignores_urls: true
 
-      # Rule 2: Don't Use the ELSE Keyword
-      else_keyword:
-        regex: '\belse\b'
-        message: "Avoid using else keyword, use early returns instead"
-        severity: warning
+#   nesting:
+#     type_level:
+#       warning: 2
+#       error: 3
+#     statement_level:
+#       warning: 5
+#       error: 7
 
-      # Rule 3: Wrap All Primitives, Strings, and Collections
-      unwrapped_primitive:
-        regex: '(?x)
-          (?:let|var)\s+\w+\s*:\s*
-          (?:
-            (?:Int|Double|Float|Bool|String|Character) |           # Basic types
-            (?:\[[^\]]*\]) |                                      # Any array type
-            (?:Set<[^>]*>) |                                      # Any set type
-            (?:Dictionary<[^>]*,[^>]*>) |                         # Any dictionary type
-            (?:\[.+:.+\])                                         # Alternative dictionary syntax
-          )
-          (?!\s*\{)
-          (?!\s*=\s*\{)'
-        message: "Wrap primitive types in value objects"
-        severity: warning
+#   type_body_length:
+#     warning: 200
+#     error: 350
 
-      # Rule 4: First Class Collections
-      collection_property:
-        regex: '(?x)
-          class\s+\w+\s*\{
-            (?:[^{}]|\{[^{}]*\})*
-            (?:let|var)\s+\w+\s*:\s*\[.*\]
-            (?:[^{}]|\{[^{}]*\})*
-            (?:let|var)\s+\w+\s*:(?!\s*\[)
-          \}'
-        message: "Classes that contain collections should not contain other instance variables"
-        severity: warning
+# custom_rules:
+#   fatal_error:
+#     name: Fatal Error
+#     excluded: "Tests/*"
+#     message: Prefer using `queuedFatalError` over `fatalError` to avoid leaking compiler host machine paths.
+#     regex: \bfatalError\b
+#     match_kinds:
+#       - identifier
+#     severity: error
 
-      # Rule 5: One Dot per Line
-      method_chaining:
-        regex: '\.\w+\s*\.\w+'
-        message: "Use only one dot per line (avoid method chaining)"
-        severity: warning
+#   mvvm_binding_pattern:
+#     name: "MVVM Binding Pattern"
+#     regex: '(?:class|struct)\s+\w+ViewModel\s*{[^}]*(?<!\$)\w+\s*:\s*Observable<[^>]+>[^}]*}'
+#     message: "ViewModel properties that represent UI state should use Observable wrapper"
+#     severity: error
 
-      # Rule 6: Don't Abbreviate Names
-      abbreviated_name:
-        regex: '(?x)
-          (?:class|struct|enum|protocol|func|let|var)\s+
-          (?:[a-z]{1,2}|[A-Z]{1,2})\w*
-          (?:\s*[:{]|\s*=)'
-        message: "Don't use abbreviations in names"
-        severity: warning
+#   dependency_injection_constructor:
+#     name: "Dependency Injection Constructor"
+#     regex: '(?:class|struct)\s+(\w+)(?:(?!init).)*\binit\s*\([^)]*\)\s*\{(?![^}]*\b\1Dependencies\b)'
+#     message: "Types should inject dependencies through a dedicated Dependencies type"
+#     severity: warning
 
-      # Rule 7: Keep All Entities Small
-      large_class:
-        regex: '(?x)
-          (?:class|struct|enum|protocol)\s+\w+[^{]*\{
-            (?:[^{}]|\{[^{}]*\}){500,}
-          \}'
-        message: "Keep classes under 50 lines"
-        severity: warning
-        
-      large_method:
-        regex: '(?x)
-          func\s+\w+\s*\([^)]*\)\s*(?:throws\s+)?(?:async\s+)?(?:->)?[^{]*\{
-            (?:[^{}]|\{[^{}]*\}){200,}
-          \}'
-        message: "Keep methods under 10 lines"
-        severity: warning
+#   command_pattern_validation:
+#     name: "Command Pattern Validation"
+#     regex: 'class\s+\w+Command\s*:.*?{(?![^}]*(?:execute|perform|run)\s*\([^)]*\))'
+#     message: "Command objects must implement execute(), perform() or run() method"
+#     severity: error
 
-      # Rule 8: No Classes With More Than Two Instance Variables
-      too_many_properties:
-        regex: '(?x)
-          class\s+\w+[^{]*\{
-            (?:[^{}]|\{[^{}]*\})*
-            (?:(?:let|var)\s+\w+\s*:(?!\s*\{)[^;]*;?\s*){3,}
-          \}'
-        message: "Classes should have no more than two instance variables"
-        severity: warning
+#   coordinator_flow_handling:
+#     name: "Coordinator Flow Handling"
+#     regex: 'class\s+\w+Coordinator\s*:.*?{(?![^}]*(?:start|handle|coordinate)\s*\([^)]*\))'
+#     message: "Coordinator classes must implement start(), handle() or coordinate() method"
+#     severity: error
 
-      # Rule 9: No Getters/Setters/Properties
-      getter_setter:
-        regex: '(?x)
-          (?:var\s+\w+\s*:\s*[^{]+\{
-            \s*get\s*\{[^}]*\}\s*
-            \s*set\s*\{[^}]*\}\s*
-          \})'
-        message: "Don't use getters and setters - tell, don't ask"
-        severity: warning
+#   reactive_disposable_pattern:
+#     name: "Reactive Disposable Pattern"
+#     regex: '(?:class|struct)\s+\w+(?:ViewModel|Controller)\s*{[^}]*(?<!\bdeinit\s*{[^}]*?)DisposeBag[^}]*}'
+#     message: "Classes using DisposeBag should properly dispose in deinit"
+#     severity: error
 
-      # Additional Support Rules
-      guard_else_usage:
-        regex: 'guard\s+[^{]+\{[^}]*\}\s*else\s*\{[^}]*return[^}]*\}'
-        message: "Use guard for early returns and preconditions"
-        severity: info
+#   use_case_implementation:
+#     name: "Use Case Implementation"
+#     regex: 'protocol\s+\w+UseCase\s*{(?![^}]*(?:execute|perform)\s*\([^)]*\)\s*(?:throws\s+)?async)'
+#     message: "Use cases should have an async execute() or perform() method"
+#     severity: error
 
-      tiny_class_enforcement:
-        regex: '(?x)
-          class\s+\w+[^{]*\{
-            (?:[^{}]|\{[^{}]*\}){1,50}
-          \}'
-        message: "Classes should be focused and small (preferably under 50 lines)"
-        severity: info
+#   repository_async_pattern:
+#     name: "Repository Async Pattern"
+#     regex: 'protocol\s+\w+Repository\s*{[^}]*func\s+\w+\s*\([^)]*\)\s*(?!async)(?!throws)[^}]*}'
+#     message: "Repository methods should be async and/or throwing"
+#     severity: warning
 
-      tell_dont_ask_violation:
-        regex: '(?x)
-          if\s+\w+\.(?:is|get|has)\w+\s*(?:\((?:[^()]|\([^()]*\))*\))?\s*\{'
-        message: "Tell, don't ask - avoid querying object state"
-        severity: warning
+#   state_machine_validation:
+#     name: "State Machine Validation"
+#     regex: 'enum\s+\w+State\s*{[^}]*(?<!\bcase\s+[^:]+:\s*(?:Equatable|Hashable|CaseIterable))[^}]*}'
+#     message: "State enums should conform to Equatable, Hashable, or CaseIterable"
+#     severity: warning
 
-      command_query_separation:
-        regex: '(?x)
-          func\s+\w+\s*\([^)]*\)\s*->\s*\w+\s*\{
-            (?:[^{}]|\{[^{}]*\})*
-            \bself\.\w+\s*=
-          \}'
-        message: "Command-Query Separation: Methods should either change state or return value, not both"
-        severity: warning
+#   service_layer_isolation:
+#     name: "Service Layer Isolation"
+#     regex: 'class\s+\w+Service\s*{[^}]*(?:\bUIKit\b|\bSwiftUI\b)[^}]*}'
+#     message: "Service layer should not import UI frameworks"
+#     severity: error
 
-  result_closure_pattern:
-    name: "Result Closure Pattern"
-    regex: '(?x)
-      # Match function with Result closure parameter
-      func\s+\w+\s*\([^)]*
-      @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
-      (?![^{]*?
-        # Must have result declaration at the start
-        (?:let|var)\s+\w*[Rr]esult\s*:\s*Result\s*<[^>]+>\s*\n
-        
-        # Must have defer block after declaration
-        .*?
-        defer\s*\{\s*\w+\s*\(\s*\w*[Rr]esult\s*\)\s*\}
-      )
-      .*?\}'
-    message: >
-      Functions with Result closure callbacks should:
-      1. Declare a result variable at the start: `let completionResult: Result<Success, Error>`
-      2. Add a defer block: `defer { completion(completionResult) }`
-      3. Then handle the actual logic
-      4. Avoid multiple assignments to the result variable - use single statement making use of the compiler type safety
-    severity: error
+#   mapper_bidirectional_check:
+#     name: "Mapper Bidirectional Check"
+#     regex: 'struct\s+\w+Mapper\s*{(?![^}]*toDomain[^}]*toDTO)'
+#     message: "Mappers should implement both toDomain and toDTO methods"
+#     severity: warning
 
-  result_closure_sequence:
-    name: "Result Closure Declaration Sequence"
-    regex: '(?x)
-      # Match function with Result closure parameter
-      func\s+\w+\s*\([^)]*
-      @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
-      (?:[^{]|\{(?:[^{}]|\{[^{}]*\})*\})*
-      # Check for result declaration not at the start
-      .+?
-      (?:let|var)\s+\w*[Rr]esult\s*:\s*Result\s*<[^>]+>
-    '
-    message: >
-      Functions with Result closure callbacks should:
-      1. Declare a result variable at the start: `let completionResult: Result<Success, Error>`
-      2. Add a defer block: `defer { completion(completionResult) }`
-      3. Then handle the actual logic
-      4. Avoid multiple assignments to the result variable - use single statement making use of the compiler type safety
-    severity: error
+#   result_builder_pattern:
+#     name: "Result Builder Pattern"
+#     regex: '@resultBuilder\s+struct\s+\w+Builder\s*{(?![^}]*buildBlock[^}]*buildEither)'
+#     message: "Result builders should implement both buildBlock and buildEither methods"
+#     severity: error
 
-  result_closure_defer:
-    name: "Result Closure Defer"
-    regex: '(?x)
-      # Match function with Result closure parameter
-      func\s+\w+\s*\([^)]*
-      @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
-      (?:[^{]|\{(?:[^{}]|\{[^{}]*\})*\})*
-      # Check for defer not immediately after result declaration
-      (?:let|var)\s+\w*[Rr]esult\s*:\s*Result\s*<[^>]+>\s*
-      (?![\s\n]*defer)
-      [^\n]+
-    '
-    message: "defer { completion(result) } should follow immediately after result declaration"
-    severity: error
+#   event_handler_type_safety:
+#     name: "Event Handler Type Safety"
+#     regex: 'typealias\s+\w+Handler\s*=\s*(?!.*->.*Result<.*,.*Error.*>)'
+#     message: "Event handlers should return Result type for proper error handling"
+#     severity: warning
 
-  multiple_result_assignments:
-    name: "Multiple Result Assignments"
-    regex: '(?x)
-      func\s+\w+\s*\([^)]*
-      @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
-      (?:[^{]|\{(?:[^{}]|\{[^{}]*\})*\})*
-      # Check for multiple assignments to result variable
-      (?:.*?\w*[Rr]esult\s*=.*?){2,}
-    '
-    message: >
-      Functions with Result closure callbacks should:
-      1. Declare a result variable at the start: `let completionResult: Result<Success, Error>`
-      2. Add a defer block: `defer { completion(completionResult) }`
-      3. Then handle the actual logic
-      4. Avoid multiple assignments to the result variable - use single statement making use of the compiler type safety
-    severity: warning
+#   actor_isolation_check:
+#     name: "Actor Isolation Check"
+#     regex: 'actor\s+\w+\s*{[^}]*(?<!\bnonisolated\b)\s*func\s+\w+\s*\([^)]*\)\s*->\s*[^{]*\{'
+#     message: "Consider marking appropriate actor methods as nonisolated"
+#     severity: warning
 
-  # Examples of valid and invalid patterns:
-  #
-  # ✅ Valid:
-  # func fetchData(completion: @escaping (Result<Data, NetworkError>) -> Void) {
-  #     let completionResult: Result<Data, NetworkError>
-  #     defer { completion(completionResult) }
-  #     
-  #     switch try await networkCall() {
-  #     case .success(let data):
-  #         completionResult = .success(data)
-  #     case .failure(let error):
-  #         completionResult = .failure(error)
-  #     }
-  # }
-  #
-  # ❌ Invalid:
-  # func fetchData(completion: @escaping (Result<Data, NetworkError>) -> Void) {
-  #     // Missing initial result declaration
-  #     // Missing defer block
-  #     let data = try await networkCall()
-  #     completion(.success(data))
-  # }
-  #
-  # ❌ Invalid:
-  # func fetchData(completion: @escaping (Result<Data, NetworkError>) -> Void) {
-  #     let completionResult: Result<Data, NetworkError>
-  #     // Missing defer block
-  #     completionResult = .success(data)
-  #     completion(completionResult)
-  # }
-  '
+#   protocol_composition_check:
+#     name: "Protocol Composition Check"
+#     regex: 'protocol\s+\w+\s*:\s*(?![^{]*&)'
+#     message: "Consider using protocol composition for better interface segregation"
+#     severity: warning
+
+#   custom_operator_documentation:
+#     name: "Custom Operator Documentation"
+#     regex: '(?<!\/\/\/[^\n]*\n\s*)(?<!\/\*(?:[^*]|\*(?!\/))*\*\/\s*)operator\s+[^a-zA-Z0-9\s]+'
+#     message: "Custom operators must be documented"
+#     severity: error
+
+#   generic_constraint_naming:
+#     name: "Generic Constraint Naming"
+#     regex: 'func\s+\w+<(?!T\s*:)[A-Z]\w*\s*:'
+#     message: "Use T as the primary generic parameter name"
+#     severity: warning
+
+#   property_wrapper_validation:
+#     name: "Property Wrapper Validation"
+#     regex: '@propertyWrapper\s+struct\s+\w+\s*{(?![^}]*wrappedValue[^}]*projectedValue)'
+#     message: "Property wrappers should implement both wrappedValue and projectedValue"
+#     severity: error
+
+#   middleware_chain_pattern:
+#     name: "Middleware Chain Pattern"
+#     regex: 'protocol\s+\w+Middleware\s*{(?![^}]*\bnext\b[^}]*handle)'
+#     message: "Middleware should have next reference and handle method"
+#     severity: warning
+
+#   macro_implementation_check:
+#     name: "Macro Implementation Check"
+#     regex: '@freestanding\(expression\)\s+macro\s+\w+\s*{(?![^}]*\bexpand\b)'
+#     message: "Expression macros must implement expand method"
+#     severity: error
+
+#   access_control_hierarchy:
+#     name: "Access Control Hierarchy"
+#     regex: '(?:internal|fileprivate|private)\s+protocol\s+\w+\s*{[^}]*public\s+'
+#     message: "Protocol members cannot be more accessible than the protocol itself"
+#     severity: error
+#   object_calisthenics:
+#     name: "Object Calisthenics Rules"
+#     included: ".*\\.swift"
+#     excluded: ".*Test\\.swift"
+#     rules:
+#       # Rule 1: Only One Level of Indentation per Method
+#       excessive_indentation:
+#         regex: '(?x)
+#           (?:func\s+\w+\s*\([^)]*\)\s*(?:throws\s+)?(?:async\s+)?(?:->)?[^{]*\{
+#             (?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*
+#             \s{8,}[^\s]
+#           )'
+#         message: "Methods should have only one level of indentation"
+#         severity: error
+
+#       # Rule 2: Don't Use the ELSE Keyword
+#       else_keyword:
+#         regex: '\belse\b'
+#         message: "Avoid using else keyword, use early returns instead"
+#         severity: warning
+
+#       # Rule 3: Wrap All Primitives, Strings, and Collections
+#       unwrapped_primitive:
+#         regex: '(?x)
+#           (?:let|var)\s+\w+\s*:\s*
+#           (?:
+#             (?:Int|Double|Float|Bool|String|Character) |           # Basic types
+#             (?:\[[^\]]*\]) |                                      # Any array type
+#             (?:Set<[^>]*>) |                                      # Any set type
+#             (?:Dictionary<[^>]*,[^>]*>) |                         # Any dictionary type
+#             (?:\[.+:.+\])                                         # Alternative dictionary syntax
+#           )
+#           (?!\s*\{)
+#           (?!\s*=\s*\{)'
+#         message: "Wrap primitive types in value objects"
+#         severity: warning
+
+#       # Rule 4: First Class Collections
+#       collection_property:
+#         regex: '(?x)
+#           class\s+\w+\s*\{
+#             (?:[^{}]|\{[^{}]*\})*
+#             (?:let|var)\s+\w+\s*:\s*\[.*\]
+#             (?:[^{}]|\{[^{}]*\})*
+#             (?:let|var)\s+\w+\s*:(?!\s*\[)
+#           \}'
+#         message: "Classes that contain collections should not contain other instance variables"
+#         severity: warning
+
+#       # Rule 5: One Dot per Line
+#       method_chaining:
+#         regex: '\.\w+\s*\.\w+'
+#         message: "Use only one dot per line (avoid method chaining)"
+#         severity: warning
+
+#       # Rule 6: Don't Abbreviate Names
+#       abbreviated_name:
+#         regex: '(?x)
+#           (?:class|struct|enum|protocol|func|let|var)\s+
+#           (?:[a-z]{1,2}|[A-Z]{1,2})\w*
+#           (?:\s*[:{]|\s*=)'
+#         message: "Don't use abbreviations in names"
+#         severity: warning
+
+#       # Rule 7: Keep All Entities Small
+#       large_class:
+#         regex: '(?x)
+#           (?:class|struct|enum|protocol)\s+\w+[^{]*\{
+#             (?:[^{}]|\{[^{}]*\}){500,}
+#           \}'
+#         message: "Keep classes under 50 lines"
+#         severity: warning
+
+#       large_method:
+#         regex: '(?x)
+#           func\s+\w+\s*\([^)]*\)\s*(?:throws\s+)?(?:async\s+)?(?:->)?[^{]*\{
+#             (?:[^{}]|\{[^{}]*\}){200,}
+#           \}'
+#         message: "Keep methods under 10 lines"
+#         severity: warning
+
+#       # Rule 8: No Classes With More Than Two Instance Variables
+#       too_many_properties:
+#         regex: '(?x)
+#           class\s+\w+[^{]*\{
+#             (?:[^{}]|\{[^{}]*\})*
+#             (?:(?:let|var)\s+\w+\s*:(?!\s*\{)[^;]*;?\s*){3,}
+#           \}'
+#         message: "Classes should have no more than two instance variables"
+#         severity: warning
+
+#       # Rule 9: No Getters/Setters/Properties
+#       getter_setter:
+#         regex: '(?x)
+#           (?:var\s+\w+\s*:\s*[^{]+\{
+#             \s*get\s*\{[^}]*\}\s*
+#             \s*set\s*\{[^}]*\}\s*
+#           \})'
+#         message: "Don't use getters and setters - tell, don't ask"
+#         severity: warning
+
+#       # Additional Support Rules
+#       guard_else_usage:
+#         regex: 'guard\s+[^{]+\{[^}]*\}\s*else\s*\{[^}]*return[^}]*\}'
+#         message: "Use guard for early returns and preconditions"
+#         severity: info
+
+#       tiny_class_enforcement:
+#         regex: '(?x)
+#           class\s+\w+[^{]*\{
+#             (?:[^{}]|\{[^{}]*\}){1,50}
+#           \}'
+#         message: "Classes should be focused and small (preferably under 50 lines)"
+#         severity: info
+
+#       tell_dont_ask_violation:
+#         regex: '(?x)
+#           if\s+\w+\.(?:is|get|has)\w+\s*(?:\((?:[^()]|\([^()]*\))*\))?\s*\{'
+#         message: "Tell, don't ask - avoid querying object state"
+#         severity: warning
+
+#       command_query_separation:
+#         regex: '(?x)
+#           func\s+\w+\s*\([^)]*\)\s*->\s*\w+\s*\{
+#             (?:[^{}]|\{[^{}]*\})*
+#             \bself\.\w+\s*=
+#           \}'
+#         message: "Command-Query Separation: Methods should either change state or return value, not both"
+#         severity: warning
+
+#   result_closure_pattern:
+#     name: "Result Closure Pattern"
+#     regex: '(?x)
+#       # Match function with Result closure parameter
+#       func\s+\w+\s*\([^)]*
+#       @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
+#       (?![^{]*?
+#         # Must have result declaration at the start
+#         (?:let|var)\s+\w*[Rr]esult\s*:\s*Result\s*<[^>]+>\s*\n
+
+#         # Must have defer block after declaration
+#         .*?
+#         defer\s*\{\s*\w+\s*\(\s*\w*[Rr]esult\s*\)\s*\}
+#       )
+#       .*?\}'
+#     message: >
+#       Functions with Result closure callbacks should:
+#       1. Declare a result variable at the start: `let completionResult: Result<Success, Error>`
+#       2. Add a defer block: `defer { completion(completionResult) }`
+#       3. Then handle the actual logic
+#       4. Avoid multiple assignments to the result variable - use single statement making use of the compiler type safety
+#     severity: error
+
+#   result_closure_sequence:
+#     name: "Result Closure Declaration Sequence"
+#     regex: '(?x)
+#       # Match function with Result closure parameter
+#       func\s+\w+\s*\([^)]*
+#       @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
+#       (?:[^{]|\{(?:[^{}]|\{[^{}]*\})*\})*
+#       # Check for result declaration not at the start
+#       .+?
+#       (?:let|var)\s+\w*[Rr]esult\s*:\s*Result\s*<[^>]+>
+#     '
+#     message: >
+#       Functions with Result closure callbacks should:
+#       1. Declare a result variable at the start: `let completionResult: Result<Success, Error>`
+#       2. Add a defer block: `defer { completion(completionResult) }`
+#       3. Then handle the actual logic
+#       4. Avoid multiple assignments to the result variable - use single statement making use of the compiler type safety
+#     severity: error
+
+#   result_closure_defer:
+#     name: "Result Closure Defer"
+#     regex: '(?x)
+#       # Match function with Result closure parameter
+#       func\s+\w+\s*\([^)]*
+#       @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
+#       (?:[^{]|\{(?:[^{}]|\{[^{}]*\})*\})*
+#       # Check for defer not immediately after result declaration
+#       (?:let|var)\s+\w*[Rr]esult\s*:\s*Result\s*<[^>]+>\s*
+#       (?![\s\n]*defer)
+#       [^\n]+
+#     '
+#     message: "defer { completion(result) } should follow immediately after result declaration"
+#     severity: error
+
+#   multiple_result_assignments:
+#     name: "Multiple Result Assignments"
+#     regex: '(?x)
+#       func\s+\w+\s*\([^)]*
+#       @escaping\s*\(\s*Result\s*<[^>]+>\s*\)\s*->?\s*Void[^{]*\{
+#       (?:[^{]|\{(?:[^{}]|\{[^{}]*\})*\})*
+#       # Check for multiple assignments to result variable
+#       (?:.*?\w*[Rr]esult\s*=.*?){2,}
+#     '
+#     message: >
+#       Functions with Result closure callbacks should:
+#       1. Declare a result variable at the start: `let completionResult: Result<Success, Error>`
+#       2. Add a defer block: `defer { completion(completionResult) }`
+#       3. Then handle the actual logic
+#       4. Avoid multiple assignments to the result variable - use single statement making use of the compiler type safety
+#     severity: warning
