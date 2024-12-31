@@ -9,107 +9,40 @@ public enum Abort: Sendable {
     }
 
     public static func because(
-        _ reason: Reason,
-        file: StaticString = #file,
-        line: UInt = #line,
-        function: StaticString = #function
+        reason: Reason,
+        sourceLocation: SourceLocation = SourceLocation()
     ) -> Never {
         because(
             reason.debugDescription,
-            file: file,
-            line: line,
-            function: function
+            sourceLocation: sourceLocation
         )
     }
 
     public static func because(
         _ reason: String,
-        file: StaticString = #file,
-        line: UInt = #line,
-        function: StaticString = #function
+        sourceLocation: SourceLocation = SourceLocation()
     ) -> Never {
-        let message = "Failed assertion in \(function) - \(reason)"
+        let message =
+            "Failed assertion in \(sourceLocation.function) - \(reason)"
         let redactedMessage = SecurePatternManager.shared.redactSensitiveInfo(
             message
         )
         queuedFatalError(
             redactedMessage,
-            file: file,
-            line: line
+            sourceLocation: sourceLocation
         )
     }
 
     public static func `if`(
         _ condition: @autoclosure () -> Bool,
         because reason: Reason,
-        file: StaticString = #file,
-        line: UInt = #line,
-        function: StaticString = #function
+        sourceLocation: SourceLocation = SourceLocation()
     ) {
         if condition() == true {
-            Abort
-                .because(
-                    reason,
-                    file: file,
-                    line: line,
-                    function: function
-                )
+            Abort.because(
+                reason: reason,
+                sourceLocation: sourceLocation
+            )
         }
-    }
-}
-
-public enum Assert {
-    public static func isMainThread(
-        _ file: StaticString = #file,
-        line: UInt = #line,
-        function: StaticString = #function
-    ) {
-        guard Thread.isMainThread else {
-            Abort
-                .because(
-                    "This may only be executed on the main thread",
-                    file: file,
-                    line: line,
-                    function: function
-                )
-        }
-    }
-
-    public static func that(
-        _ condition: @autoclosure () -> Bool,
-        because: Abort.Reason,
-        file: StaticString = #file,
-        line: UInt = #line,
-        function: StaticString = #function
-    ) {
-        guard condition() == true else {
-            Abort
-                .because(
-                    because,
-                    file: file,
-                    line: line,
-                    function: function
-                )
-        }
-    }
-
-    public static func that(
-        _ condition: @autoclosure () -> Bool,
-        because: String,
-        file: StaticString = #file,
-        line: UInt = #line,
-        function: StaticString = #function
-    ) {
-        that(
-            condition(),
-            because:
-                Abort
-                .Reason(
-                    because
-                ),
-            file: file,
-            line: line,
-            function: function
-        )
     }
 }
