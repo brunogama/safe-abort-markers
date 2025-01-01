@@ -11,6 +11,7 @@ convention:
   - ops
   - docs
   - merge
+  - chore
 changelog:
   commitTypes:
   - feat

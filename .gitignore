@@ -1,6 +1,9 @@
 # Xcode
 #
 
+# backs are not persisted
+.git-hooks-backup
+
 ## Build generated
 build/
 DerivedData
